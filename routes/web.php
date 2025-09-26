@@ -17,12 +17,7 @@ Route::get('/contact', function () {
 });
 
 Route::get('/jobs/{id}', function (int $id) {
-
-    $job = Arr::first(Job::all(), fn($job) => $job['id'] === $id);
-
-    if (!$job) {
-        abort(404);
-    }
+    $job = Job::find($id);
 
     return view('job', ['job' => $job]);
 });

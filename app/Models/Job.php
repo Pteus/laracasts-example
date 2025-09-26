@@ -2,26 +2,11 @@
 
 namespace App\Models;
 
-class Job
+use Illuminate\Database\Eloquent\Model;
+
+class Job extends Model
 {
-    public static function all(): array
-    {
-        return [
-            [
-                'id' => 1,
-                'title' => 'Director',
-                'salary' => '50€',
-            ],
-            [
-                'id' => 2,
-                'title' => 'Programmer',
-                'salary' => '500€',
-            ],
-            [
-                'id' => 3,
-                'title' => 'Bullshitter',
-                'salary' => '500000€',
-            ]
-        ];
-    }
+    protected $table = 'job_listings';
+
+    protected $fillable = ['title', 'salary'];
 }
