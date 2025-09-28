@@ -1,36 +1,33 @@
 <x-layout>
     <x-slot:heading>
-        Create Job
+        Log in
     </x-slot:heading>
 
-    <form method="POST" action="/jobs">
+    <form method="POST" action="/login">
         @csrf
         <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base/7 font-semibold text-gray-900">Create a new job</h2>
-                <p class="mt-1 text-sm/6 text-gray-600">We just need some details.</p>
+                <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
-                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <x-form-field>
-                        <x-form-label for="title">
-                            Title
+                        <x-form-label for="email">
+                            Email
                         </x-form-label>
                         <div class="mt-2">
-                            <x-form-input id="title" name="title" placeholder="CEO" required/>
-                            <x-form-error name="title"/>
+                            <x-form-input id="email" name="email" required type="email"/>
+                            <x-form-error name="email"/>
                         </div>
                     </x-form-field>
 
                     <x-form-field>
-                        <x-form-label for="salary">
-                            Salary
+                        <x-form-label for="password">
+                            Password
                         </x-form-label>
                         <div class="mt-2">
-                            <x-form-input id="salary" name="salary" placeholder="500€" required/>
-                            <x-form-error name="salary"/>
+                            <x-form-input id="password" name="password" required type="password"/>
+                            <x-form-error name="password"/>
                         </div>
                     </x-form-field>
-
 
                 </div>
 
@@ -48,9 +45,9 @@
         </div>
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
-            <button type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</button>
+            <a href='/' class="text-sm/6 font-semibold text-gray-900">Cancel</a>
             <x-form-button>
-                Save
+                Log in
             </x-form-button>
         </div>
     </form>
